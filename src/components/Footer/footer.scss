@@ -1,0 +1,20 @@
+@use '../../styles/vars';
+
+// header
+.header {
+  padding: vars.$padding-l;
+  text-align: center;
+  background-color: vars.$primary-color;
+  color: vars.$light-color;
+
+  & > h1 {
+    font-weight: vars.$bold;
+    font-size: vars.$font-l;
+    margin-bottom: 1rem;
+  }
+
+  .value-to-convert {
+    font-weight: vars.$light;
+    font-size: vars.$font-l;
+  }
+}

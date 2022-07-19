@@ -1,0 +1,12 @@
+@use '../../styles/vars';
+
+// App
+.app {
+  width: 500px;
+  height: calc(100vh - vars.$padding-m * 2);
+  display: flex;
+  flex-direction: column;
+  //overflow-y: hidden;
+  background-color: vars.$light-color;
+  color: vars.$primary-color;
+}

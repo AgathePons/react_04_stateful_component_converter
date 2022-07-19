@@ -1,0 +1,46 @@
+@use '../../styles/vars';
+
+// main
+.main {
+  flex-grow: 1;
+  overflow-y: scroll;
+  &__title {
+    padding: vars.$padding-m;
+    font-weight: vars.$bold;
+    font-size: vars.$font-m;
+  }
+  &__list {
+    &__item {
+      padding: vars.$padding-m;
+      background-color: vars.$light-color;
+      border-top: 1px solid lighten($color: vars.$primary-color, $amount: 30);
+      transition: background-color vars.$slow ease-in;
+      font-size: vars.$font-m;
+      &:last-child {
+        border-bottom: 1px solid lighten($color: vars.$primary-color, $amount: 30);
+      }
+      &:hover {
+        background-color: lighten($color: vars.$primary-color, $amount: 30);
+        cursor: pointer;
+        transition: background-color vars.$fast ease-in;
+      }
+    }
+  }
+  &__result {
+    padding: vars.$padding-l;
+    text-align: center;
+    background-color: vars.$light-color;
+    color: vars.$primary-color;
+
+    &__value {
+      display: block;
+      font-weight: vars.$bold;
+      font-size: vars.$font-l;
+      margin-bottom: 1rem;
+    }
+    &__currency {
+      font-weight: vars.$light;
+      font-size: vars.$font-l;
+    }
+  }
+}
