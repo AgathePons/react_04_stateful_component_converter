@@ -1,19 +1,19 @@
 @use '../../styles/vars';
 
-// header
-.header {
+// footer
+.result {
   padding: vars.$padding-l;
   text-align: center;
-  background-color: vars.$primary-color;
-  color: vars.$light-color;
+  background-color: vars.$light-color;
+  color: vars.$primary-color;
 
-  & > h1 {
+  &__value {
+    display: block;
     font-weight: vars.$bold;
     font-size: vars.$font-l;
     margin-bottom: 1rem;
   }
-
-  .value-to-convert {
+  &__currency {
     font-weight: vars.$light;
     font-size: vars.$font-l;
   }

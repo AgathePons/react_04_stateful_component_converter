@@ -1,11 +1,12 @@
 // == Import
 import PropTypes from 'prop-types';
+import './result.scss';
 
 function Result({ resultValue, selectedCurrency }) {
   return (
-    <div className="main__result">
-      <span className="main__result__value">{resultValue}</span>
-      <span className="main__result__currency">{selectedCurrency}</span>
+    <div className="result">
+      <span className="result__value">{resultValue}</span>
+      <span className="result__currency">{selectedCurrency}</span>
     </div>
   );
 }

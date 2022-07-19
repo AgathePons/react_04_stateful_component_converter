@@ -4,7 +4,7 @@ import currencies from '../../data/currencies';
 
 import Header from '../Header';
 import Main from '../Main';
-import Footer from '../Footer';
+import Result from '../Result';
 
 import data from '../../data/currencies';
 
@@ -17,7 +17,7 @@ function App() {
         currencyToConvert="euro"
       />
       <Main currencies={data} />
-      <Footer
+      <Result
         resultValue={1.09}
         selectedCurrency="United States Dollar"
       />

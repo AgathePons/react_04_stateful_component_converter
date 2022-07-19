@@ -26,21 +26,4 @@
       }
     }
   }
-  &__result {
-    padding: vars.$padding-l;
-    text-align: center;
-    background-color: vars.$light-color;
-    color: vars.$primary-color;
-
-    &__value {
-      display: block;
-      font-weight: vars.$bold;
-      font-size: vars.$font-l;
-      margin-bottom: 1rem;
-    }
-    &__currency {
-      font-weight: vars.$light;
-      font-size: vars.$font-l;
-    }
-  }
 }
