@@ -1,15 +1,15 @@
 // == Import
 import PropTypes from 'prop-types';
-import './main.scss';
+import './currencies.scss';
 
 import Currency from './currency';
 
 // == Composant
-function Main({ currencies }) {
+function Currencies({ currencies }) {
   return (
-    <main className="main">
-      <h2 className="main__title">Currencies</h2>
-      <ul className="main__list">
+    <main className="currencies">
+      <h2 className="currencies__title">Currencies</h2>
+      <ul className="currencies__list">
         {
           currencies.map((item) => (
             <Currency
@@ -24,7 +24,7 @@ function Main({ currencies }) {
   );
 }
 
-Main.propTypes = {
+Currencies.propTypes = {
   currencies: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -34,4 +34,4 @@ Main.propTypes = {
 };
 
 // == Export
-export default Main;
+export default Currencies;

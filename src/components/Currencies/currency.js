@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Currency({ name }) {
   return (
-    <li className="main__list__item">
+    <li className="currencies__list__item">
       {name}
     </li>
   );

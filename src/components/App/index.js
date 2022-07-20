@@ -3,7 +3,7 @@ import './app.scss';
 import currencies from '../../data/currencies';
 
 import Header from '../Header';
-import Main from '../Main';
+import Currencies from '../Currencies';
 import Result from '../Result';
 
 import data from '../../data/currencies';
@@ -16,7 +16,7 @@ function App() {
         valueToConvert={1}
         currencyToConvert="euro"
       />
-      <Main currencies={data} />
+      <Currencies currencies={data} />
       <Result
         resultValue={1.09}
         selectedCurrency="United States Dollar"
