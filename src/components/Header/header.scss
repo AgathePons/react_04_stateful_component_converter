@@ -7,13 +7,13 @@
   background-color: vars.$primary-color;
   color: vars.$light-color;
 
-  & > h1 {
+  &__title {
     font-weight: vars.$bold;
     font-size: vars.$font-l;
     margin-bottom: 1rem;
   }
 
-  .value-to-convert {
+  &__base-amount {
     font-weight: vars.$light;
     font-size: vars.$font-l;
   }

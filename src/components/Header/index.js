@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 function Header({ valueToConvert, currencyToConvert }) {
   return (
     <header className="header">
-      <h1>Converter</h1>
-      <div className="value-to-convert">
+      <h1 className="header__title">Converter</h1>
+      <div className="header__base-amount">
         {valueToConvert} {currencyToConvert}
       </div>
     </header>
