@@ -1,12 +1,11 @@
 // == Import
 import './app.scss';
-import currencies from '../../data/currencies';
 
 import Header from '../Header';
 import Currencies from '../Currencies';
 import Result from '../Result';
 
-import data from '../../data/currencies';
+import currenciesList from '../../data/currencies';
 
 // == Composant
 function App() {
@@ -16,7 +15,7 @@ function App() {
         valueToConvert={1}
         currencyToConvert="euro"
       />
-      <Currencies currencies={data} />
+      <Currencies currencies={currenciesList} />
       <Result
         resultValue={1.09}
         selectedCurrency="United States Dollar"
