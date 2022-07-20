@@ -4,6 +4,7 @@ import React from 'react';
 import './app.scss';
 
 import Header from '../Header';
+import Toggler from '../Toggler';
 import Currencies from '../Currencies';
 import Result from '../Result';
 
@@ -19,33 +20,46 @@ class App extends React.Component {
     // in the constructor, we define an internal state with this.state
     // it is always an object
     this.state = {
-      isListOpen: false,
+      baseAmount: 10,
+      selectedCurrency: 'Chinese Renminbi Yuan',
+      isListOpen: true,
     };
+    // to be able to get the context of handleButtonClic, we bind it to this
+    // it means we explicitly associate the context to the function to avoid an undefined
+    // now, when we call the function, we get the context (this) with it
+    this.handleButtonClic = this.handleButtonClic.bind(this);
+  }
+
+  handleButtonClic() {
+    // setState(), method to modify the state and re-render
+    this.setState({
+      isListOpen: !this.state.isListOpen,
+    });
+  }
+
+  makeConversion() {
+    const foundCurrency = currenciesList.find((c) => c.name === this.state.selectedCurrency);
+    const convertedAmount = foundCurrency.rate * this.state.baseAmount;
+    return Math.round(convertedAmount * 100) / 100;
+    // we can also round it this way: parseFloat(convertedAmount.toFixed(2))
   }
 
   render() {
     return (
       <div className="app">
         <Header
-          valueToConvert={1}
+          baseAmount={this.state.baseAmount}
           currencyToConvert="euro"
         />
-        <button
-          type="button"
-          onClick={() => {
-            // setState(), method to modify the state and re-render
-            this.setState({
-              isListOpen: true,
-            });
-          }}
-        >
-          Afficher / masquer
-        </button>
+        <Toggler
+          isOpen={this.state.isListOpen}
+          onButtonClick={this.handleButtonClic}
+        />
         {/* we can use this.state to take something from the state */}
         {this.state.isListOpen && <Currencies currencies={currenciesList} />}
         <Result
-          resultValue={1.09}
-          selectedCurrency="United States Dollar"
+          resultValue={this.makeConversion()}
+          selectedCurrency={this.state.selectedCurrency}
         />
       </div>
     );

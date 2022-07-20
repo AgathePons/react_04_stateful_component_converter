@@ -3,6 +3,7 @@
 // header
 .header {
   padding: vars.$padding-l;
+  padding-bottom: calc(vars.$padding-l + 15px);
   text-align: center;
   background-color: vars.$primary-color;
   color: vars.$light-color;

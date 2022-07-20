@@ -3,6 +3,7 @@
 // footer
 .result {
   padding: vars.$padding-l;
+  padding-top: calc(vars.$padding-l + 25px);
   text-align: center;
   background-color: vars.$light-color;
   color: vars.$primary-color;

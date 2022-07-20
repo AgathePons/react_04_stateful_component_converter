@@ -3,19 +3,19 @@ import './header.scss';
 import PropTypes from 'prop-types';
 
 // == Composant
-function Header({ valueToConvert, currencyToConvert }) {
+function Header({ baseAmount, currencyToConvert }) {
   return (
     <header className="header">
       <h1 className="header__title">Converter</h1>
       <div className="header__base-amount">
-        {valueToConvert} {currencyToConvert}
+        {baseAmount} {currencyToConvert}
       </div>
     </header>
   );
 }
 
 Header.propTypes = {
-  valueToConvert: PropTypes.number.isRequired,
+  baseAmount: PropTypes.number.isRequired,
   currencyToConvert: PropTypes.string.isRequired,
 };
 
