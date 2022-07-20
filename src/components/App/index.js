@@ -33,6 +33,7 @@ class App extends React.Component {
         <button
           type="button"
           onClick={() => {
+            // setState(), method to modify the state and re-render
             this.setState({
               isListOpen: true,
             });
