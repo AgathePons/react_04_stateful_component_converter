@@ -20,7 +20,7 @@ class App extends React.Component {
     // in the constructor, we define an internal state with this.state
     // it is always an object
     this.state = {
-      baseAmount: 10,
+      baseAmount: 1,
       selectedCurrency: 'Chinese Renminbi Yuan',
       isListOpen: true,
     };
@@ -38,9 +38,9 @@ class App extends React.Component {
     });
   }
 
-  handleCurrencyClic(e) {
+  handleCurrencyClic(itemName) {
     this.setState({
-      selectedCurrency: e.target.textContent,
+      selectedCurrency: itemName,
     });
   }
 
@@ -63,8 +63,9 @@ class App extends React.Component {
           onButtonClick={this.handleButtonClic}
         />
         {/* we can use this.state to take something from the state */}
-        {this.state.isListOpen
-        && <Currencies currencies={currenciesList} onCurrencyClick={this.handleCurrencyClic} />}
+        {this.state.isListOpen && (
+          <Currencies currencies={currenciesList} onCurrencyClick={this.handleCurrencyClic} />
+        )}
         <Result
           resultValue={this.makeConversion()}
           selectedCurrency={this.state.selectedCurrency}

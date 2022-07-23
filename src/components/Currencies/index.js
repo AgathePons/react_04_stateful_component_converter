@@ -16,7 +16,7 @@ function Currencies({ currencies, onCurrencyClick }) {
               key={item.name}
               name={item.name}
               rate={item.rate}
-              onCurrencyClick={onCurrencyClick}
+              onCurrencyClick={() => onCurrencyClick(item.name)}
             />
           ))
         }
