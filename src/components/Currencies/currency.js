@@ -1,9 +1,9 @@
 // == Import
 import PropTypes from 'prop-types';
 
-function Currency({ name }) {
+function Currency({ name, onCurrencyClick }) {
   return (
-    <li className="currencies__list__item">
+    <li className="currencies__list__item" onClick={onCurrencyClick}>
       {name}
     </li>
   );
@@ -11,7 +11,7 @@ function Currency({ name }) {
 
 Currency.propTypes = {
   name: PropTypes.string.isRequired,
-  // rate: PropTypes.number.isRequired,
+  onCurrencyClick: PropTypes.func.isRequired,
 };
 
 export default Currency;

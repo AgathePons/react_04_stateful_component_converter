@@ -28,12 +28,19 @@ class App extends React.Component {
     // it means we explicitly associate the context to the function to avoid an undefined
     // now, when we call the function, we get the context (this) with it
     this.handleButtonClic = this.handleButtonClic.bind(this);
+    this.handleCurrencyClic = this.handleCurrencyClic.bind(this);
   }
 
   handleButtonClic() {
     // setState(), method to modify the state and re-render
     this.setState({
       isListOpen: !this.state.isListOpen,
+    });
+  }
+
+  handleCurrencyClic(e) {
+    this.setState({
+      selectedCurrency: e.target.textContent,
     });
   }
 
@@ -56,7 +63,8 @@ class App extends React.Component {
           onButtonClick={this.handleButtonClic}
         />
         {/* we can use this.state to take something from the state */}
-        {this.state.isListOpen && <Currencies currencies={currenciesList} />}
+        {this.state.isListOpen
+        && <Currencies currencies={currenciesList} onCurrencyClick={this.handleCurrencyClic} />}
         <Result
           resultValue={this.makeConversion()}
           selectedCurrency={this.state.selectedCurrency}

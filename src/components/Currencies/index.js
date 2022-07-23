@@ -5,7 +5,7 @@ import './currencies.scss';
 import Currency from './currency';
 
 // == Composant
-function Currencies({ currencies }) {
+function Currencies({ currencies, onCurrencyClick }) {
   return (
     <main className="currencies">
       <h2 className="currencies__title">Currencies</h2>
@@ -16,6 +16,7 @@ function Currencies({ currencies }) {
               key={item.name}
               name={item.name}
               rate={item.rate}
+              onCurrencyClick={onCurrencyClick}
             />
           ))
         }
@@ -31,6 +32,7 @@ Currencies.propTypes = {
       rate: PropTypes.number.isRequired,
     }),
   ).isRequired,
+  onCurrencyClick: PropTypes.func.isRequired,
 };
 
 // == Export
