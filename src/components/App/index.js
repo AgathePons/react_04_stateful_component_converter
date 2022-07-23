@@ -41,7 +41,7 @@ class App extends React.Component {
 
   handleInputChange(e) {
     this.setState({
-      baseAmount: Number(e.target.value),
+      baseAmount: e.target.valueAsNumber, // for input type number, we can use valueAsNumber
     });
   }
 
