@@ -1,5 +1,7 @@
 # WIP
 
+componentDidMount()
+componentDidUpdate()
 stateful
 setState()
 onClick / onChange

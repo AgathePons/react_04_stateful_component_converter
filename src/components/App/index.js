@@ -32,6 +32,16 @@ class App extends React.Component {
     this.handleCurrencyClic = this.handleCurrencyClic.bind(this);
   }
 
+  componentDidMount() {
+    console.log('App vient d\'être monté');
+    document.title = `Euros vers ${this.state.selectedCurrency}`;
+  }
+
+  componentDidUpdate() {
+    console.log('App a été updated');
+    document.title = `Euros vers ${this.state.selectedCurrency}`;
+  }
+
   handleButtonClic() {
     // setState(), method to modify the state and re-render
     this.setState({
