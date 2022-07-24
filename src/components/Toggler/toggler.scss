@@ -15,7 +15,7 @@
   transition: background-color vars.$slow ease-in;
   &:hover {
     background-color: lighten($color: vars.$primary-color, $amount: 30);
-    transition: background-color vars.$fast ease-in, transform vars.$fast ease-in;;
+    transition: background-color vars.$fast ease-in, transform vars.$fast ease-in;
   }
   &--open {
     transform: rotate(90deg);
