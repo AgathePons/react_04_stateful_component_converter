@@ -4,6 +4,7 @@
 .currencies {
   flex-grow: 1;
   overflow-y: scroll;
+  scrollbar-color: vars.$primary-color vars.$light-color;//firefox
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -17,6 +18,18 @@
     padding: vars.$padding-m;
     font-weight: vars.$bold;
     font-size: vars.$font-m;
+  }
+  &__input {
+    width: -webkit-fill-available;
+    margin: 0 vars.$padding-s vars.$padding-s vars.$padding-s;
+    padding: vars.$padding-s;
+    border-radius: vars.$padding-l;
+    background-color: vars.$light-color;
+    border: 4px solid lighten($color: vars.$primary-color, $amount: 30);
+    color: darken($color: vars.$primary-color, $amount: 10);
+    font-size: vars.$font-s;
+    font-weight: vars.$bold;
+    
   }
   &__list {
     &__item {

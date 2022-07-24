@@ -23,12 +23,14 @@ class App extends React.Component {
       baseAmount: 1,
       selectedCurrency: 'Chinese Renminbi Yuan',
       isListOpen: true,
+      searchedText: '',
     };
     // to be able to get the context of handleButtonClic, we bind it to this
     // it means we explicitly associate the context to the function to avoid an undefined
     // now, when we call the function, we get the context (this) with it
     this.handleButtonClic = this.handleButtonClic.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputSearchChange = this.handleInputSearchChange.bind(this);
     this.handleCurrencyClic = this.handleCurrencyClic.bind(this);
   }
 
@@ -37,9 +39,13 @@ class App extends React.Component {
     document.title = `Euros vers ${this.state.selectedCurrency}`;
   }
 
-  componentDidUpdate() {
+  // prevProps and prevState in paramters to access previous state and props
+  componentDidUpdate(prevProps, prevState) {
     console.log('App a été updated');
-    document.title = `Euros vers ${this.state.selectedCurrency}`;
+    if (prevState.selectedCurrency !== this.state.selectedCurrency) {
+      console.log('New currency:', this.state.selectedCurrency);
+      document.title = `Euros vers ${this.state.selectedCurrency}`;
+    }
   }
 
   handleButtonClic() {
@@ -52,6 +58,13 @@ class App extends React.Component {
   handleInputChange(e) {
     this.setState({
       baseAmount: e.target.valueAsNumber, // for input type number, we can use valueAsNumber
+    });
+  }
+
+  handleInputSearchChange(e) {
+    console.log('search input has been changed');
+    this.setState({
+      searchedText: e.target.value,
     });
   }
 
@@ -82,7 +95,12 @@ class App extends React.Component {
         />
         {/* we can use this.state to take something from the state */}
         {this.state.isListOpen && (
-          <Currencies currencies={currenciesList} onCurrencyClick={this.handleCurrencyClic} />
+          <Currencies
+            currencies={currenciesList}
+            searchedText={this.state.searchedText}
+            onSearchChange={this.handleInputSearchChange}
+            onCurrencyClick={this.handleCurrencyClic}
+          />
         )}
         <Result
           resultValue={this.makeConversion()}
